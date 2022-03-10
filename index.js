@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 const corsOptions = {
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://zulkarnaenfhr.github.io/indonesia-covid-mapping/", "https://zulkarnaenfhr.github.io/"],
 };
 
 const requestEndpoint = "https://data.covid19.go.id/public/api/skor.json";
