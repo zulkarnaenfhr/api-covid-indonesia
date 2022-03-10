@@ -15,17 +15,9 @@ const apiCityRiskScore = "https://data.covid19.go.id/public/api/skor.json";
 app.get("/", cors(corsOptions), async (req, res) => {
     const url = "localhost/5000";
     res.json({
-        message: "Selamat Datang di API COVID-19 INDONESIA - Enjoy My Work",
-        "projects source": "https://github.com/Reynadi531/api-covid19-indonesia-v2",
-        endpoints: {
-            kumulatif: [`${url}/api/indonesia`, `${url}/api/indonesia/more`],
-            harian: [`${url}/api/indonesia/harian`],
-            provinsi: [`${url}/api/indonesia/provinsi`, `${url}/api/indonesia/provinsi/alt`, `${url}/api/indonesia/provinsi/more`, `${url}/api/indonesia/provinsi/harian`],
-            csv: {
-                kumulatif: [`${url}/api/indonesia/csv`],
-                harian: [`${url}/api/indonesia/csv/harian`],
-                provinsi: [`${url}/api/indonesia/csv/provinsi`, `${url}/api/indonesia/csv/provinsi/alt`],
-            },
+        message: "Just to Enable the Cors Option from https://covid19.go.id/dokumentasi-api . for personal project because there is a corsOption url setting just for my project",
+        endpoint: {
+            cityScore: "https://api-covid-indonesia.herokuapp.com/cityScore",
         },
     });
 });
