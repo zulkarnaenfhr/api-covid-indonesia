@@ -15,13 +15,26 @@ app.get("/", cors(corsOptions), async (req, res) => {
     res.json({
         message: "Just to Enable the Cors Option from https://covid19.go.id/dokumentasi-api . for personal project because there is a corsOption url setting just for my project",
         endpoint: {
+            updateIndonesiaHarian: "https://api-covid-indonesia.herokuapp.com/updateHarianIndonesia",
             cityScore: "https://api-covid-indonesia.herokuapp.com/cityScore",
             feedBerita: "https://api-covid-indonesia.herokuapp.com/feedBerita",
         },
     });
 });
 
+const apiUpdateIndonesiaHarian = "https://data.covid19.go.id/public/api/update.json";
+
+app.get("/updateHarianIndonesia", cors(corsOptions), async (req, res) => {
+    const fetchOptions = {
+        method: "GET",
+    };
+    const response = await fetch(apiUpdateIndonesiaHarian, fetchOptions);
+    const jsonResponse = await response.json();
+    res.json(jsonResponse);
+});
+
 const apiCityRiskScore = "https://data.covid19.go.id/public/api/skor.json";
+
 app.get("/cityScore", cors(corsOptions), async (req, res) => {
     const fetchOptions = {
         method: "GET",
@@ -32,6 +45,7 @@ app.get("/cityScore", cors(corsOptions), async (req, res) => {
 });
 
 const feedBerita = "https://newsapi.org/v2/everything?q=covid&apiKey=4f8b1414b1634e198f8758eef4d8daf2&domains=detik.com";
+
 app.get("/feedBerita", cors(corsOptions), async (req, res) => {
     const fetchOptions = {
         method: "GET",
