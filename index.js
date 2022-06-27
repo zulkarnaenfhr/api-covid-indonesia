@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 const corsOptions = {
-    origin: ["http://localhost:3000", "https://zulkarnaenfhr.github.io/indonesia-covid-mapping/", "https://zulkarnaenfhr.github.io/"],
+    origin: ["http://localhost:3000", "https://zulkarnaenfhr.github.io/indonesia-covid-mapping/", "https://zulkarnaenfhr.github.io/", "https://indonesia-covid-mapping-next.vercel.app/"],
 };
 
 app.get("/", cors(corsOptions), async (req, res) => {
