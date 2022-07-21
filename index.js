@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.use(cors());
+
 const corsOptions = {
     origin: ["http://localhost:3000", "https://zulkarnaenfhr.github.io/indonesia-covid-mapping/", "https://zulkarnaenfhr.github.io/", "https://indonesia-covid-mapping-next.vercel.app/"],
 };
@@ -116,7 +117,7 @@ app.get("/RiskScoreProvinsi", cors(corsOptions), async (req, res) => {
     res.json(jsonResponse);
 });
 
-const feedBerita = "https://newsapi.org/v2/everything?q=covid&apiKey=4f8b1414b1634e198f8758eef4d8daf2&domains=detik.com";
+const feedBerita = "https://newsapi.org/v2/top-headlines?country=id&apiKey=4f8b1414b1634e198f8758eef4d8daf2&q=covid";
 app.get("/feedBerita", cors(corsOptions), async (req, res) => {
     const fetchOptions = {
         method: "GET",
